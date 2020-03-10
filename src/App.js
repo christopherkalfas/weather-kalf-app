@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import apiConfig from './apiKeys'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?zip=10302,us&units=imperial&APPID=' + apiConfig.apikey
+class App extends React.Component {
+  state = {
+    days:[]
+  }
+
+  componentDidMount = () => {
+    fetch(weatherURL)
+    .then(res => res.json())
+    .then(data => {
+      console.log("data load", data.list)
+      const dailyWeatherData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
+      this.setState({days: dailyWeatherData})
+    })
+  }
+
+  render(){
+    return(
+      <div className='App'>
+        WeatherKalf
+      </div>
+    )
+  }
 }
 
 export default App;
