@@ -1,4 +1,5 @@
 import React from 'react';
+import './Card.css'
 
 var moment = require('moment');
 
@@ -16,8 +17,9 @@ class Card extends React.Component {
 
 
     return (
-      <div className="col-auto">
-        <div className="card bg-light">
+      <div className="card">
+        <div className="card">
+        <h2>{this.props.day.location}</h2>
           <h3 className="card-title">{moment(newDate).format('dddd')}</h3>
           <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
           <i className={imgURL}></i>

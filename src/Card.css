@@ -1,0 +1,12 @@
+.card {
+    width: 20rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1 rem;
+    border: black 2rem;
+}
+
+i:hover {
+    animation: shake 1.5s;
+}

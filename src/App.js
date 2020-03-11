@@ -3,7 +3,7 @@ import './App.css';
 import apiConfig from './apiKeys'
 import Card from './Card'
 
-const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?zip=10302,us&units=imperial&APPID=' + apiConfig.apikey
+const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?zip=30008,us&units=imperial&APPID=' + apiConfig.apikey
 class App extends React.Component {
   state = {
     fullData: [],
@@ -29,9 +29,11 @@ class App extends React.Component {
 
   render(){
     return(
-      <div className='App'>
-        WeatherKalf
-        {this.formatCards()}
+      <div className='container'>
+        <h1 className='display-1 jumbotron'>WeatherKalf</h1>
+        <div className="row justify-content-center">
+          {this.formatCards()}
+        </div>
       </div>
     )
   }
