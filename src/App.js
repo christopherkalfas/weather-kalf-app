@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import apiConfig from './apiKeys'
+import Card from './Card'
 
 const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?zip=10302,us&units=imperial&APPID=' + apiConfig.apikey
 class App extends React.Component {
@@ -22,14 +23,15 @@ class App extends React.Component {
     })
   }
 
-  // formatCards = () => {
-  //   return this.state.days.map( ( day, index ) => <Card day={day} key= {index} />)
-  // }
+  formatCards = () => {
+    return this.state.dailyWeatherData.map(( reading, index) => <Card day={reading} key= {index} />)
+  }
 
   render(){
     return(
       <div className='App'>
         WeatherKalf
+        {this.formatCards()}
       </div>
     )
   }
