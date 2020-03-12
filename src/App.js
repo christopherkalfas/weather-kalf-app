@@ -5,7 +5,7 @@ import Card from './Card'
 
 const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?zip=30008,us&units=imperial&APPID=' + apiConfig.apikey
 class App extends React.Component {
-  state = {
+  state={
     fullData: [],
     dailyWeatherData: []
   }
@@ -31,7 +31,7 @@ class App extends React.Component {
     return(
       <div className='container'>
         <h1 className='display-1 jumbotron'>WeatherKalf</h1>
-        <div className="row justify-content-center">
+        <div className="list-group list-group-horizontal-xl">
           {this.formatCards()}
         </div>
       </div>
