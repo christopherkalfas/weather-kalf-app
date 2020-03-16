@@ -11,24 +11,30 @@ function Search(){
         if(e.key === "Enter"){
             fetch(`${baseURL}weather?q=${query}&units=Imperial&APPID=${apiConfig.apikey}`)
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                setWeather(data)
+                setQuery('')
+                console.log(data)
+            })
         }
     }
 
 
     return(
-        <div className="search-box">
-            <input 
-                type='text'
-                className="search-bar"
-                placeholder="Search for Forcast"
-                onChange={ e => setQuery( e.target.value ) }
-                value={ query }
-                onKeyPress = { search }
-            />
-
-
-
+        <div className='weather-search-container'>
+            <div className="search-box">
+                <input 
+                    type='text'
+                    className="search-bar"
+                    placeholder="Search for Forecast"
+                    onChange={ e => setQuery( e.target.value ) }
+                    value={ query }
+                    onKeyPress = { search }
+                />
+            </div>
+            <div className='location'>
+                {weather.name}
+            </div>
         </div>
     )
 }
