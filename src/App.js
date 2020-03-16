@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import apiConfig from './apiKeys'
 import Card from './Card'
-import Search from './Search'
+import SearchByCity from './SearchByCity'
 
 const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?zip=30008,us&units=imperial&APPID=' + apiConfig.apikey
 class App extends React.Component {
@@ -32,7 +32,7 @@ class App extends React.Component {
     return(
       <div className='container'>
         <h1 className='display-1 jumbotron'>WeatherKalf</h1>
-        <Search />
+        <SearchByCity />
         <div className="list-group list-group-horizontal-xl">
           {this.formatCards()}
         </div>
