@@ -3,6 +3,8 @@ import apiConfig from './apiKeys'
 
 const baseURL = "https://api.openweathermap.org/data/2.5/"
 
+
+
 function SearchByCity(){
     const [ query, setQuery ] = useState('')
     const [ weather, setWeather ] = useState({})
@@ -34,16 +36,17 @@ function SearchByCity(){
                     />
                 </div>
                 {(typeof weather.main != "undefined") ? (
-                    <div>
-                    <div className='location'>
-                    {weather.name} {weather.sys.country}
+                    <div className='search-results'>
+                    <div className='card-title'>
+                    <strong>{weather.name}, {weather.sys.country}</strong>
                 </div>
-                <div className="temp">
-                {Math.round(weather.main.temp)}
+                <div className="text-muted">
+
+                {Math.round(weather.main.temp)}°F
                 <br/>
                 Temp Range: {Math.round(weather.main.temp_min)} - {Math.round(weather.main.temp_max)}
                 </div>
-                <div className = 'weather-type'>
+                <div className = 'card-text'>
                     {weather.weather[0].main}
                 </div>
                     </div>
