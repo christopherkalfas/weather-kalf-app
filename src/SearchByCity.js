@@ -21,7 +21,17 @@ function SearchByCity(){
         }
     }
 
+    const dateNow = (dmy) => {
+        let months = ["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        let daysOfTheWeek = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
 
+        let day = daysOfTheWeek[ dmy.getDay() ]
+        let month = months[ dmy.getMonth() ]
+        let year = dmy.getFullYear()
+        let date = dmy.getDate()
+
+        return `${day}, ${month}-${date}, ${year}`
+    }
     return(
         <div className={(typeof weather.main != 'undefined') ? ((weather.main.temp.Imperial > 60) ? 'app warm' : 'app') : 'app'}>
             <div className='weather-search-container'>
@@ -39,6 +49,9 @@ function SearchByCity(){
                     <div className='search-results'>
                     <div className='card-title'>
                     <strong>{weather.name}, {weather.sys.country}</strong>
+                    <div className="date">
+                        {dateNow( new Date())}
+                    </div>
                 </div>
                 <div className="text-muted">
 
