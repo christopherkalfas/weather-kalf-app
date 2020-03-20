@@ -16,10 +16,12 @@ function SearchByCity(){
             .then(data => {
                 setWeather(data)
                 setQuery('')
-                console.log(data)
+                console.log(data.weather[0].id)
+                console.log(data.weather)
             })
         }
     }
+    
 
     const dateNow = (dmy) => {
         let months = ["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -32,6 +34,7 @@ function SearchByCity(){
 
         return `${day}, ${month}-${date}, ${year}`
     }
+
     return(
         <div className={(typeof weather.main != 'undefined') ? ((weather.main.temp.Imperial > 60) ? 'app warm' : 'app') : 'app'}>
             <div className='weather-search-container'>
@@ -52,6 +55,7 @@ function SearchByCity(){
                     <div className="date">
                         {dateNow( new Date())}
                     </div>
+                    <i className={"owf owf-"+ weather.weather["0"].id +" owf-5x red"}></i>
                 </div>
                 <div className="text-muted">
 
