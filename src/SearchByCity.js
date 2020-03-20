@@ -56,11 +56,10 @@ function SearchByCity(){
                         {dateNow( new Date())}
                     </div>
                     <i className={"owf owf-"+ weather.weather["0"].id +" owf-5x red"}></i>
+                    <h2>{Math.round(weather.main.temp)}°F </h2>
+                    <p>Updated: Just Now</p>
                 </div>
                 <div className="text-muted">
-
-                {Math.round(weather.main.temp)}°F
-                <br/>
                 Temp Range: {Math.round(weather.main.temp_min)} - {Math.round(weather.main.temp_max)}
                 </div>
                 <div className = 'card-text'>
