@@ -38,6 +38,7 @@ function SearchByCity(){
     return(
         <div className={(typeof weather.main != 'undefined') ? ((weather.main.temp.Imperial > 60) ? 'app warm' : 'app') : 'app'}>
             <div className='weather-search-container'>
+                <h3 className="search-header">Search by City</h3>
                 <div className="search-box">
                     <input 
                         type='text'

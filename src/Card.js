@@ -26,7 +26,7 @@ class Card extends React.Component {
           <h2>{Math.round(this.props.day.main.temp)} °F</h2>
           <div className="card-body">
             <p className="card-text">{this.props.day.weather[0].description}</p>
-            <button className="btn btn-dark btn-outline-light">See Hourly Forecast</button>
+            {/* <button className="btn btn-dark btn-outline-light">See Hourly Forecast</button> */}
           </div>
         </div>
       </div>
