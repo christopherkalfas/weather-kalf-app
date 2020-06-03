@@ -4,7 +4,7 @@ import apiConfig from './apiKeys'
 import Card from './Card'
 import SearchByCity from './SearchByCity'
 
-const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?zip=30008,us&units=imperial&APPID=' + apiConfig.apikey
+const weatherURL = 'https://api.openweathermap.org/data/2.5/forecast?zip=30008,us&units=imperial&APPID=' + apiConfig.apikey
 class App extends React.Component {
   state = {
     fullData: [],
